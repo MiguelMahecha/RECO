@@ -1,0 +1,16 @@
+$TTL    3h
+
+@ IN SOA dns1.gonzalez.com.it. mail.gonzalez.com.it. (
+    2007020601 ; serial
+    3h         ; refresh after 3 hours
+    1h         ; retry after 1 hour
+    1w         ; expire after 1 week
+    1h )       ; negative caching TTL of 1 hour
+
+gonzalez.com.it.    IN  NS  dns1.gonzalez.com.it.
+gonzalez.com.it.    IN  NS  dns2.gonzalez.com.it.
+
+gonzalez.com.it.    IN  MX  mail.gonzalez.com.it
+
+loki                IN  A   10.2.77.186
+dns1                IN  A   10.2.77.186

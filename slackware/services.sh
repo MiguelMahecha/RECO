@@ -8,6 +8,7 @@ while true; do
     echo "3. Reiniciar un proceso"
     echo "4. Finalizar un proceso"
     echo "5. Salir del Menu"
+    echo "6. Easter egg"
     echo "----------------------------------------------------------------------------"
 
     read -p "Ingresa tu opcion: "  valor
@@ -36,6 +37,9 @@ while true; do
         5)
             break
             clear
+            ;;
+        6)
+            echo "Joan estuvo aqui"
             ;;
         *)
             echo "Opcion no valida"

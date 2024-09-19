@@ -1,0 +1,27 @@
+; base zone file for gonzalez.com.it
+$TTL 2d    ; default TTL for zone
+$ORIGIN gonzalez.com.it. ; base domain-name
+; Start of Authority RR defining the key characteristics of the zone (domain)
+@         IN      SOA   ns1.gonzalez.com.it. hostmaster.gonzalez.com.it. (
+                                2003080800 ; serial number
+                                12h        ; refresh
+                                15m        ; update retry
+                                3w         ; expiry
+                                2h         ; minimum
+                                )
+; name server RR for the domain
+           IN      NS      ns1.gonzalez.com.it.
+; mail server RRs for the zone (domain)
+        3w IN      MX  10  mail.gonzalez.com.it.
+; domain hosts includes NS and MX records defined above
+; plus any others required
+; for instance a user query for the A RR of joe.gonzalez.com.it will
+; return the IPv4 address 192.168.0.6 from this zone file
+ns1        IN      A       192.168.0.2
+mail       IN      A       192.168.0.4
+tmp        IN      A       192.168.0.6
+www        IN      A       192.168.0.7
+
+; aliases mail (mail server)
+correo        IN      CNAME   mail.gonzalez.com.it.
+web           IN      CNAME   www.gonzalez.com.it.

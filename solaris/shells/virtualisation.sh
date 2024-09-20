@@ -84,37 +84,37 @@ while true; do
     echo "6. Display the last 'n' lines of a file"
     echo "7. Exit"
 
-    read -p "Enter your choice [1-7]: " choice
+    read -pr "Enter your choice [1-7]: " choice
 
     case $choice in
     1)
-        read -p "Enter the directory to search: " directory
-        read -p "Enter the name or part of the name of the file to search for: " file_name
+        read -pr "Enter the directory to search: " directory
+        read -pr "Enter the name or part of the name of the file to search for: " file_name
         search_file "$directory" "$file_name"
         ;;
     2)
-        read -p "Enter the file to search: " file
-        read -p "Enter the word or part of the word to search for: " search_word
+        read -pr "Enter the file to search: " file
+        read -pr "Enter the word or part of the word to search for: " search_word
         search_word "$file" "$search_word"
         ;;
     3)
-        read -p "Enter the directory to search: " directory
-        read -p "Enter the name or part of the name of the file to search for: " file_name
-        read -p "Enter the word or part of the word to search for: " search_word
+        read -pr "Enter the directory to search: " directory
+        read -pr "Enter the name or part of the name of the file to search for: " file_name
+        read -pr "Enter the word or part of the word to search for: " search_word
         search_file_and_word "$directory" "$file_name" "$search_word"
         ;;
     4)
-        read -p "Enter the file to count lines: " file
+        read -pr "Enter the file to count lines: " file
         count_lines "$file"
         ;;
     5)
-        read -p "Enter the file to display lines from: " file
-        read -p "Enter the number of lines to display: " n
+        read -pr "Enter the file to display lines from: " file
+        read -pr "Enter the number of lines to display: " n
         display_first_lines "$file" "$n"
         ;;
     6)
-        read -p "Enter the file to display lines from: " file
-        read -p "Enter the number of lines to display: " n
+        read -pr "Enter the file to display lines from: " file
+        read -pr "Enter the number of lines to display: " n
         display_last_lines "$file" "$n"
         ;;
     7)
@@ -126,5 +126,5 @@ while true; do
         ;;
     esac
 
-    read -p "Press Enter to continue..."
+    read -pr "Press Enter to continue..."
 done
